@@ -6,6 +6,7 @@ public class Uimanager : MonoBehaviour
 {
 
     public TextMeshProUGUI puntuacion;
+    public TextMeshProUGUI vida;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +22,8 @@ public class Uimanager : MonoBehaviour
     {
         puntuacion.text = score.ToString();
     }
-     
+    public void UpdateHealth(int health)
+    {
+        vida.text = health.ToString();
+    }
 }
