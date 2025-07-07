@@ -22,29 +22,35 @@ public class ColisionE : MonoBehaviour
         {
             if (canInteract)
             {
-                Destroy(colisiones.gameObject);
-                scoreManager.SumarPuntuacion(scorePoints);
-                EndInteraction();
+                if (colisiones != null)
+                {
+                    Destroy(colisiones.gameObject);
+                    scoreManager.SumarPuntuacion(scorePoints);
+                    EndInteraction();
+                }
+                else
+                {
+                   
+                    canInteract = false; 
+                    UIInteractionMessage.SetActive(false);
+                }
             }
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-  
         colisiones = other.GetComponent<DeteccionDeColisiones>();
         if (colisiones)
         {
             UIInteractionMessage.SetActive(true);
             canInteract = true;
         }
-
     }
 
     void OnTriggerExit(Collider other)
     {
         EndInteraction();
-
     }
 
     void EndInteraction()
