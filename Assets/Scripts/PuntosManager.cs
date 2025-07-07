@@ -19,12 +19,6 @@ public class PuntosManager : MonoBehaviour
     {
         
     }
-    public void SumarPuntuacion()
-    {
-        puntuacion++;
-        Debug.Log("+1");
-        uimanager.UpdateScore(puntuacion);
-    }
     public void SumarPuntuacion(int scorePoints)
     {
         puntuacion += scorePoints;
