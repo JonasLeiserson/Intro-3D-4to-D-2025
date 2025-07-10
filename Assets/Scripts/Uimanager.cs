@@ -7,10 +7,12 @@ public class Uimanager : MonoBehaviour
 
     public TextMeshProUGUI puntuacion;
     public TextMeshProUGUI vida;
+    public TextMeshProUGUI GanasteTxt;
+    public GameObject ImagenGanar;
     // Start is called before the first frame update
     void Start()
     {
-        
+        ImagenGanar.SetActive(false);
     }
 
     // Update is called once per frame
@@ -20,10 +22,15 @@ public class Uimanager : MonoBehaviour
     }
     public void UpdateScore(int score)
     {
-        puntuacion.text = score.ToString();
+        puntuacion.text = "puntuacion: " + score.ToString();
     }
     public void UpdateHealth(int health)
     {
-        vida.text = health.ToString();
+        vida.text = "vida: " + health.ToString();
+    }
+    public void Ganar(int puntuacion)
+    {
+        ImagenGanar.SetActive(true);
+        GanasteTxt.text = "¡¡¡Ganaste!!!  puntuacion:" + puntuacion;
     }
 }

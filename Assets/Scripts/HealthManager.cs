@@ -13,7 +13,7 @@ public class HealthManager : MonoBehaviour
     {
         uimanager = FindObjectOfType<Uimanager>();
         Health = MaxHealth;
-        Debug.Log(Health);
+        
     }
 
     // Update is called once per frame
@@ -28,6 +28,7 @@ public class HealthManager : MonoBehaviour
             return;
         }
         Health -= puntosdedaño;
+        Debug.Log(Health);
         uimanager.UpdateHealth(Health);
     }
 }
