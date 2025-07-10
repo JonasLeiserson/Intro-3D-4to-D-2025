@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class DeathRespawn : MonoBehaviour
 {
     public float deathHeight = -20;
-
+    public Uimanager uimanager;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,7 @@ public class DeathRespawn : MonoBehaviour
         if (transform.position.y < deathHeight)
         {
             Debug.Log("Respawn");
-            SceneManager.LoadScene("FPS parkour");
+            uimanager.Perder();
         }
     }
 }

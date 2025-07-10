@@ -25,7 +25,7 @@ public class HealthManager : MonoBehaviour
     {
       if (Health <= puntosdedaño)
         {
-            return;
+            uimanager.Perder();
         }
         Health -= puntosdedaño;
         Debug.Log(Health);
